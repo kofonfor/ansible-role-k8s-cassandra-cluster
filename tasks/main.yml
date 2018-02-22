@@ -40,7 +40,7 @@
   shell: kubectl create --namespace={{ cassandra_cluster_namespace }} -f /root/cassandra-pv3.yaml
   when: result|failed
 
-- name: check if a Helm release for etcd-operator is present
+- name: check if a Helm release for cassandra-cluster is present
   shell: helm list --namespace={{ cassandra_cluster_namespace }} | grep cassandra-cluster-release
   register: result
   ignore_errors: true
